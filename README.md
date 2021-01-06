@@ -1,1 +1,46 @@
 # 210106
+
+
+
+
+
+
+--테이블 만들기
+CREATE TABLE CAR(
+	BRAND VARCHAR2(100),
+	COLOR VARCHAR2(50),
+	PRICE NUMBER(6)
+);
+
+--꽃 테이블(꽃이름, 색깔, 가격)
+CREATE TABLE FLOWER(
+	NAME VARCHAR2(100),
+	COLOR VARCHAR2(50),
+	PRICE NUMBER(6)
+);
+
+--책 테이블(책이름, 저자, 장르, 출판사 )
+CREATE TABLE BOOK(
+	ISBN NUMBER(4) PRIMARY KEY,
+	이름 VARCHAR2(100),
+	저자 VARCHAR2(30),
+	장르 VARCHAR2(50),
+	출판사 VARCHAR2(100)
+);
+
+--PK도 관리해야하는 경우가 생기기 때문에 아래의 방법으로 만드는 것을 추천!
+CREATE TABLE BOOK(
+	ISBN NUMBER(4),
+	이름 VARCHAR2(100),
+	저자 VARCHAR2(30),
+	장르 VARCHAR2(50),
+	출판사 VARCHAR2(100),
+	CONSTRAINT BOOK_PK PRIMARY KEY(ISBN)
+);
+
+-- * : 전부
+--BOOK 테이블에 있는 모든 내용 검색
+SELECT * FROM BOOK;
+
+--테이블 삭제
+DROP TABLE BOOK;
